@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/loginActivity.dart';
 import 'package:uts_haidarjaimuladyan_2410910040026/loginActivity.dart';
 
-
-void main(List<String> args) {
-  runApp(MyApp());
+void main() {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,7 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: LoginActivity(),
+    return const MaterialApp(
+      home: LoginActivity(),
     );
-  } 
+  }
 }

@@ -20,20 +20,26 @@ class _LoginActivityState extends State<LoginActivity> {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Sign In", style: TextStyle(fontWeight: FontWeight.bold),),
-        centerTitle: true,
-      ),
       body: Padding(
         padding: EdgeInsets.all(8.0),
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage(""))
-              ),
+            Row(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(image: AssetImage("assets/Logo.png"))
+                  ),
+                ),
+                Column(
+                  children: [
+                    Text("LKS"),
+                    Text("MART"),
+                  ],
+                )
+              ],
             ),
 
           // Nama
