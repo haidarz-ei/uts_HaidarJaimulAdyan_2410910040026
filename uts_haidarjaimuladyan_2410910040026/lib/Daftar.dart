@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uts_haidarjaimuladyan_2410910040026/loginActivity.dart';
 
 class Daftar extends StatefulWidget {
   const Daftar({super.key});
@@ -155,7 +156,26 @@ class _DaftarState extends State<Daftar> {
                     child: Text("Daftar", style: TextStyle(fontSize: 20, color: Colors.white)))
                   ),
               ),
-              )
+              ),
+                            Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Sudah punya Akun?", style: TextStyle(fontWeight: FontWeight.bold),),
+                    TextButton(onPressed: () {                 
+                        Navigator.push(
+                          context, MaterialPageRoute(builder: (context) => LoginActivity()), 
+                        );
+                      },
+                      child: Row(
+                        children: [
+                          Text("Login  Disini", style: TextStyle( fontWeight: FontWeight.bold, color: Colors.blueAccent)),
+                        ],
+                      )
+                    )
+                  ],
+                ),
+              ),
             
 
             ]

@@ -81,7 +81,7 @@ class Menu extends StatelessWidget {
             ),  
             SizedBox(height: 10,),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 30),
+              padding: EdgeInsets.symmetric(horizontal: 50),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -111,12 +111,12 @@ class Menu extends StatelessWidget {
               ),
             ),
 
-SizedBox(height: 10,),
+            SizedBox(height: 10,),
 
                   Expanded(
                     child: Center(
                       child: Container(
-                        width: MediaQuery.of(context).size.width * 0.8,
+                        width: MediaQuery.of(context).size.width * 0.9,
                           height: MediaQuery.of(context).size.height * 1,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),

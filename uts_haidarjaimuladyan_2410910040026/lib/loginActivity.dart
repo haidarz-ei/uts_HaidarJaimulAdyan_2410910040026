@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uts_haidarjaimuladyan_2410910040026/Daftar.dart';
+import 'package:uts_haidarjaimuladyan_2410910040026/Menu.dart';
 
 class LoginActivity extends StatefulWidget {
   const LoginActivity({super.key});
@@ -23,8 +24,8 @@ class _LoginActivityState extends State<LoginActivity> {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
+          
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +91,7 @@ class _LoginActivityState extends State<LoginActivity> {
 
             TextButton(onPressed: () {          
                 Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Daftar()), 
+                  context, MaterialPageRoute(builder: (context) => Menu()), 
                 );
               },
               child: Center(
@@ -105,8 +106,28 @@ class _LoginActivityState extends State<LoginActivity> {
                     child: Text("Login", style: TextStyle(fontSize: 20, color: Colors.white)))
                   ),
               ),
-              )
-            
+              ),
+        
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Belum punya Akun?", style: TextStyle(fontWeight: FontWeight.bold),),
+                    TextButton(onPressed: () {                 
+                        Navigator.push(
+                          context, MaterialPageRoute(builder: (context) => Daftar()), 
+                        );
+                      },
+                      child: Row(
+                        children: [
+                          Text("Daftar Disini", style: TextStyle( fontWeight: FontWeight.bold, color: Colors.blueAccent)),
+                        ],
+                      )
+                    )
+                  ],
+                ),
+              ),
+
 
             
           ]
