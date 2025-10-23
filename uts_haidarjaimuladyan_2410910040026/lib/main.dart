@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uts_haidarjaimuladyan_2410910040026/Daftar.dart';
+import 'package:uts_haidarjaimuladyan_2410910040026/Menu.dart';
 import 'package:uts_haidarjaimuladyan_2410910040026/loginActivity.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Daftar(),
+      home: Menu(),
     );
   }
 }
