@@ -21,7 +21,7 @@ class _LoginActivityState extends State<LoginActivity> {
     
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -40,6 +40,11 @@ class _LoginActivityState extends State<LoginActivity> {
                 Text("LKS \n\Mart", style: TextStyle(fontWeight: FontWeight.bold, color:const Color.fromARGB(255, 19, 86, 140), fontSize: 45 ),),
               ],
             ),
+            SizedBox(height: 20,),
+            Text("Sign In", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),),
+            Text("Enter Your ID and Password to Sign In", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.blueGrey),),
+            
+            SizedBox(height: 20,),
 
           // Nama
             Text("Email :", style: TextStyle(fontSize: 15),),
@@ -83,17 +88,17 @@ class _LoginActivityState extends State<LoginActivity> {
             ),
 
             SizedBox(height: 20,),
+
+            Center(
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text("Daftar", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              ),
+            ),
             
           ]
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: Text("Login", style: TextStyle(fontWeight: FontWeight.bold),),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
