@@ -16,23 +16,54 @@ class Menu extends StatelessWidget {
   ];
 
     return Scaffold(
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.all(0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(image: AssetImage("assets/Logo.png"), 
-                          fit: BoxFit.cover,)
-                        ),
-                      ),
-                                  SizedBox(width: 10,),
+            Container(
+              width: 400,
+              height: 60,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20),
+                  bottomRight: Radius.circular(20)
+                ),
+                color: const Color.fromARGB(255, 210, 210, 210)
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(image: AssetImage("assets/Logo.png"), 
+                      fit: BoxFit.cover,)
+                    ),
+                  ),
+                  SizedBox(width: 10,),
                   Text("LKS MART", style: TextStyle(fontWeight: FontWeight.bold, color:const Color.fromARGB(255, 19, 86, 140), fontSize: 45 ),),
-              ],
+                ],
+              ),
             ),  
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Produk"),
+                  Container(
+                    width: 200,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.all(Radius.circular(20)
+                      )
+                    ),
+                    child: Center(child: Text("Cari Item"))
+                  )
+                ],
+              ),
+            ),
 
                   Expanded(
                     child: ListView.builder(
@@ -58,6 +89,7 @@ class Menu extends StatelessWidget {
                       },
                     ),
                   ),
+
         ]
       ),
       )
