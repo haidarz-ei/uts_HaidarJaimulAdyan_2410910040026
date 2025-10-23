@@ -5,14 +5,6 @@ class Menu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  final List<Map<String, dynamic>> mhs = [
-    {"nama": "Muslihat", "nim": "123", "usia": 9},
-    {"nama": "mawar", "nim": "456", "usia": 10},
-    {"nama": "cecep", "nim": "112", "usia": 13},
-    {"nama": "ubed", "nim": "131", "usia": 16},
-    {"nama": "komar", "nim": "415", "usia": 18},
-  ];
-
   List<Map<String,dynamic>> Items=[
     {
       "kode_produk":"PRD-001",
@@ -46,11 +38,19 @@ class Menu extends StatelessWidget {
       "rating":4.4,
       "gambar":"gambar/004.jpg"
     },
+        {
+      "kode_produk":"PRD-004",
+      "deskripsi":"Pikopi ",
+      "harga":13000,
+      "stok":5,
+      "rating":4.4,
+      "gambar":"gambar/004.jpg"
+    },
   ];
 
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(0),
+        padding: EdgeInsets.symmetric(vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -111,52 +111,65 @@ class Menu extends StatelessWidget {
               ),
             ),
 
+SizedBox(height: 10,),
+
                   Expanded(
-                    child: ListView.builder(
-                      itemCount: mhs.length,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: mhs[index]["usia"] < 16
-                                ? Colors.amber
-                                : Colors.red,
-                              borderRadius: BorderRadius.all(Radius.circular(20))
-                            ),
-                            child: ListTile(
-                              title: Text(mhs[index]["nama"]),
-                              subtitle: Text(mhs[index]["usia"].toString(),
-                              )
-                            )
+                    child: Center(
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.8,
+                          height: MediaQuery.of(context).size.height * 1,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: const Color.fromARGB(255, 242, 209, 181)
                           ),
-                        );
-                      },
+                        child: ListView.builder(
+                          itemCount: Items.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: 100,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(Radius.circular(20))
+                                ),
+                                child: ListTile(
+                                  title: Text(Items[index]["deskripsi"]),
+                                  subtitle: Text(Items[index]["harga"].toString(),
+                                  )
+                                )
+                              ),
+                            );
+                          },
+                        ),
+                      ),
                     ),
                   ),
 
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: Items.length,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: 100,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(20))
-                            ),
-                            child: ListTile(
-                              title: Text(Items[index]["deskripsi"]),
-                              subtitle: Text(Items[index]["usia"].toString(),
-                              )
-                            )
-                          ),
-                        );
-                      },
-                    ),
+                SizedBox(height: 10,),
+
+                Center(
+                  child: Column(
+                    children: [
+                      Text("Total Belanja :", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: const Color.fromARGB(255, 19, 86, 140)),)
+
+
+                      
+                    ],
                   ),
+                ),
+                
+                Center(
+                  child: Container(
+                    width: 200,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      color: Colors.green
+                    ),
+                    child: Center(child: Text("Bayar Sekarang", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white),)),
+                  ),
+                )
+                
 
         ]
       ),
