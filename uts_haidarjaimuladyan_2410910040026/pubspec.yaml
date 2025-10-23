@@ -1,4 +1,4 @@
-name: uts_haidarjaimuladyan_2410910040026
+name: flutter_application_1
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -50,16 +50,43 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
-flutter:
+
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-  uses-material-design: true
+
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/001.jpg
+    - assets/002.jpg
+    - assets/003.jpg
+    - assets/004.jpg
+    - assets/administrator 1.png
+    - assets/calendar-range.png 
+    - assets/cashier 1.png
+    - assets/Delete.png
+    - assets/Edit.png
+
+    - assets/Gudang.png
+    - assets/Logo.png
+    - assets/Logo.png
+    - assets/Tambah1.png
+
+    - assets/fonts
+
+  fonts:
+    - family: ArialNarrow
+      fonts:
+        - asset: assets/fonts/arial_narrow_7.ttf
+
+
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

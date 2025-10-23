@@ -21,7 +21,7 @@ class _LoginActivityState extends State<LoginActivity> {
     
     return Scaffold(
       appBar: AppBar(
-        title: Text("Registrasi", style: TextStyle(fontWeight: FontWeight.bold),),
+        title: Text("Sign In", style: TextStyle(fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
       body: Padding(
@@ -30,16 +30,21 @@ class _LoginActivityState extends State<LoginActivity> {
           // mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage(""))
+              ),
+            ),
 
           // Nama
-            Text("Nama :", style: TextStyle(fontSize: 15),),
+            Text("Email :", style: TextStyle(fontSize: 15),),
             SizedBox(height: 5,),
             TextField(
               controller: _namaController, 
               maxLength: 50,
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.person_2),
-                hintText: "Masukkan Nama Lengkap" , hintStyle: TextStyle(fontSize: 13),
+                hintText: "Email" , hintStyle: TextStyle(fontSize: 13),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8)
                 )
@@ -47,7 +52,7 @@ class _LoginActivityState extends State<LoginActivity> {
             ),
           
           // Kata Sandi
-            Text("Kata Sandi :", style: TextStyle(fontSize: 15)),
+            Text("Password :", style: TextStyle(fontSize: 15)),
             SizedBox(height: 5,),
             TextField(
               controller: _passwordController,
@@ -65,54 +70,25 @@ class _LoginActivityState extends State<LoginActivity> {
                     : Icons.visibility_off,
                   ),
                 ),
-                hintText: "Masukkan Kata Sandi", hintStyle: TextStyle(fontSize: 13),
+                hintText: "Min. 8 characters", hintStyle: TextStyle(fontSize: 13),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8)
                 )
               ),
-            ),
-
-            // Tanggal
-            Text("Tanggal Lahir :", style: TextStyle(fontSize: 15)),
-            SizedBox(height: 5,),
-            TextField(
-              controller: _ttlController, 
-              decoration: InputDecoration(
-                suffixIcon: Icon(Icons.calendar_month),
-                hintText: "dd-mm-yyyy", hintStyle: TextStyle(fontSize: 13),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8)
-                )
-              ),
-
-              onTap: () async {
-                DateTime? pilihTanggal = await showDatePicker(
-                  context: context, 
-                  firstDate: DateTime(2000), 
-                  lastDate: DateTime(2100),
-                  initialDate: DateTime.now()
-                );
-                // cek tanggal yang dipilih
-                if(pilihTanggal !=null) {
-                  setState(() {
-                    _ttlController.text = '${pilihTanggal.day}-${pilihTanggal.month}-${pilihTanggal.year}';
-                  });
-                }
-              },
             ),
 
             SizedBox(height: 20,),
-
-            ElevatedButton(onPressed: (){
-              print(_namaController.text);
-              print(_passwordController.text);
-              print(_ttlController.text);
-            }, 
-            child: Text("Simpan")),
             
           ]
         ),
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: Text("Login", style: TextStyle(fontWeight: FontWeight.bold),),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
