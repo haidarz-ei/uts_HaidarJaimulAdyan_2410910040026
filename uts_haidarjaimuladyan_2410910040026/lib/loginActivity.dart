@@ -23,22 +23,21 @@ class _LoginActivityState extends State<LoginActivity> {
       body: Padding(
         padding: EdgeInsets.all(8.0),
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
+                  width: 150,
+                  height: 150,
                   decoration: BoxDecoration(
-                    image: DecorationImage(image: AssetImage("assets/Logo.png"))
+                    image: DecorationImage(image: AssetImage("assets/Logo.png"), 
+                    fit: BoxFit.cover,)
                   ),
-                ),
-                Column(
-                  children: [
-                    Text("LKS"),
-                    Text("MART"),
-                  ],
-                )
+                ),  
+                SizedBox(width: 10,),
+                Text("LKS \n\Mart", style: TextStyle(fontWeight: FontWeight.bold, color:const Color.fromARGB(255, 19, 86, 140), fontSize: 45 ),),
               ],
             ),
 

@@ -64,18 +64,9 @@ flutter:
     - assets/cashier 1.png
     - assets/Delete.png
     - assets/Edit.png
-
     - assets/Gudang.png
     - assets/Logo.png
-    - assets/Logo.png
     - assets/Tambah1.png
-
-    - assets/fonts
-
-  fonts:
-    - family: ArialNarrow
-      fonts:
-        - asset: assets/fonts/arial_narrow_7.ttf
 
 
 
