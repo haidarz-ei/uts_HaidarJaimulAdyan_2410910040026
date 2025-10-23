@@ -102,7 +102,7 @@ class _LoginActivityState extends State<LoginActivity> {
                     color: const Color.fromARGB(255, 21, 63, 161)
                   ),
                   child: Center(
-                    child: Text("Daftar", style: TextStyle(fontSize: 20, color: Colors.white)))
+                    child: Text("Login", style: TextStyle(fontSize: 20, color: Colors.white)))
                   ),
               ),
               )
