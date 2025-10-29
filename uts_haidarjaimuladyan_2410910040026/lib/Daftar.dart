@@ -14,7 +14,6 @@ class _DaftarState extends State<Daftar> {
   bool _showpassword = true;
   final TextEditingController _namaController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _ttlController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
