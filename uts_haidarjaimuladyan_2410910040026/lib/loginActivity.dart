@@ -122,23 +122,55 @@ class _LoginActivityState extends State<LoginActivity> {
             
                     SizedBox(height: 20,),
             
-                    TextButton(onPressed: () {
-                        Navigator.push(
-                          context, MaterialPageRoute(builder: (context) => Menu()),
-                        );
-                      },
-                      child: Center(
-                        child: Container(
-                          width: 500,
-                          height: 50,
-                          decoration: BoxDecoration(
+            // Changed TextButton to ElevatedButton for better button functionality.
+                    // TextButton(onPressed: () {
+                      ElevatedButton(
+                        onPressed: () {
+                          // Logika login: Validasi email dan password
+                          // Contoh: Cek apakah email dan password valid
+                          if (_emailController.text.isEmpty || _passwordController.text.isEmpty) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('Email dan Password harus diisi')),
+                            );
+                            return;
+                          }
+
+                          // Simulasi login berhasil
+                          print('Email: ${_emailController.text}');
+                          print('Password: ${_passwordController.text}');
+                          print('Keep Logged In: $_keepLoggedIn');
+
+                          // Tampilkan pesan sukses
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text('Login berhasil!')),
+                          );
+
+                          // Navigasi ke halaman Menu
+                          Navigator.push(
+                            context, MaterialPageRoute(builder: (context) => Menu()),
+                          );
+                        },
+
+                        // child: Center(
+                        //   child: Container(
+                        //     width: 500,
+                        //     height: 50,
+                        //     decoration: BoxDecoration(
+                        //       borderRadius: BorderRadius.circular(10),
+                        //       color: const Color.fromARGB(255, 19, 86, 140)
+                        //     ),
+                        //     child: Center(
+                        //       child: Text("Login", style: TextStyle(fontSize: 20, color: Colors.white)))
+                        //   ),
+
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(255, 19, 86, 140),
+                          minimumSize: Size(500, 50),
+                          shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
-                            color: const Color.fromARGB(255, 19, 86, 140)
                           ),
-                          child: Center(
-                            child: Text("Login", style: TextStyle(fontSize: 20, color: Colors.white)))
-                          ),
-                      ),
+                        ),
+                        child: Text("Login", style: TextStyle(fontSize: 20, color: Colors.white)),
                       ),
             
                       Container(
